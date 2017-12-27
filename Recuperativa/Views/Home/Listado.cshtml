@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Recuperativa.Models.Vaca>
+@{
+    ViewData["Title"] = "Listado";
+}
+<h2>Listado de  Vacas</h2>
+<table class="table table-bordered table-hover">
+    <thead>
+    <th>Diio</th>
+    <th>Nombre</th>
+    <th>Sexo</th>
+    <th>Raza</th>
+    <th>Leche</th>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+
+            <tr>
+                <td>@Html.DisplayFor(m => p.Diio)</td>
+                <td>@Html.DisplayFor(m => p.Nombre)</td>
+                <td>@Html.DisplayFor(m => p.Sexo)</td>
+                <td>@Html.DisplayFor(m => p.Raza)</td>
+                <td>@Html.DisplayFor(m => p.Leche)</td>
+                <td>@Html.ActionLink("Visualizar", "Ficha", new { Diio = p.Diio })</td>
+            </tr>
+        }
+    </tbody>
+</table>
